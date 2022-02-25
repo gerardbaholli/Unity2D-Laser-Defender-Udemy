@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 141704104077990990}
   - component: {fileID: 8167292086536440869}
   - component: {fileID: -1267442450793961908}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,6 +112,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  shotCounter: 0
+  minTimeBetweenShot: 0.2
+  maxTimeBetweenShot: 3
+  laserPrefab: {fileID: 3833286307187057284, guid: 58fdf649e7b76604e8de81b8c73526dc, type: 3}
+  projectileSpeed: 3
+  deathVFX: {fileID: 3332793530976079267, guid: 7a5b3bc74a163d64a81a50b454ab5d99, type: 3}
+  durationOfExplosion: 1
 --- !u!58 &-1267442450793961908
 CircleCollider2D:
   m_ObjectHideFlags: 0
