@@ -6,9 +6,9 @@ public class Enemy : MonoBehaviour
 {
     [Header("Enemy")]
     [SerializeField] float health = 100f;
-    [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShot = 0.2f;
     [SerializeField] float maxTimeBetweenShot = 3f;
+    [SerializeField] int scoreValue = 1;
 
     [Header("Projectile")]
     [SerializeField] GameObject laserPrefab;
@@ -24,11 +24,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] AudioClip shootSFX;
     [SerializeField][Range(0f, 1f)] float shootSFXVolume = 0.5f;
 
-    AudioSource audioSource;
+    private float shotCounter;
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         shotCounter = Random.Range(minTimeBetweenShot, maxTimeBetweenShot);
     }
 
@@ -75,6 +74,7 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
+        FindObjectOfType<GameSession>().AddToScore(scoreValue);
         Destroy(gameObject);
         GameObject explosion = Instantiate(deathVFX, transform.position, transform.rotation);
         Destroy(explosion, durationOfExplosion);

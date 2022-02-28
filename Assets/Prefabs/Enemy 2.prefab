@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 141704104550731210}
   - component: {fileID: 141704104550731209}
   - component: {fileID: 141704104077990990}
-  - component: {fileID: 8167292086536440869}
-  - component: {fileID: -7647781808796941209}
-  - component: {fileID: -1267442450793961908}
-  - component: {fileID: -968527632484121716}
+  - component: {fileID: 7174207378209598500}
+  - component: {fileID: 1880545640375589970}
+  - component: {fileID: 8960063583837694348}
+  - component: {fileID: 2355606594949686598}
   m_Layer: 8
-  m_Name: Enemy 0
+  m_Name: Enemy 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fa1c8dd00f6bbce4288938c90f9d4806, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7915e349cff66694793ec99fa262e029, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d7216c91a070c42b00d7165472a84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8167292086536440869
+--- !u!114 &7174207378209598500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,19 +113,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db7b0545fb46c445bd9a29d92d6f6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  shotCounter: 0
+  health: 600
   minTimeBetweenShot: 0.2
-  maxTimeBetweenShot: 3
-  laserPrefab: {fileID: 3833286307187057284, guid: 58fdf649e7b76604e8de81b8c73526dc, type: 3}
-  projectileSpeed: 3
+  maxTimeBetweenShot: 0.6
+  scoreValue: 1
+  laserPrefab: {fileID: 3833286307187057284, guid: e3b39fcac18d9794ea7c464b8eaaa9ef, type: 3}
+  projectileSpeed: 2
   deathVFX: {fileID: 3332793530976079267, guid: 7a5b3bc74a163d64a81a50b454ab5d99, type: 3}
   durationOfExplosion: 1
   deathSFX: {fileID: 8300000, guid: 4f26ff33cb677484ebfcefb96d473d0f, type: 3}
   deathSFXVolume: 0.7
   shootSFX: {fileID: 8300000, guid: 1b34890c24a43e142b30c6c8b4123f2a, type: 3}
-  shootSFXVolume: 0.5
---- !u!114 &-7647781808796941209
+  shootSFXVolume: 0.1
+--- !u!114 &1880545640375589970
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,23 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 200
---- !u!58 &-1267442450793961908
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141704104550731208}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.47
---- !u!50 &-968527632484121716
+--- !u!50 &8960063583837694348
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -175,3 +159,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &2355606594949686598
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141704104550731208}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.8
